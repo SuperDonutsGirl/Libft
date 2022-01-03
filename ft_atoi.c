@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_spacesigne(const char *str, int *signe, int *neg)
+static int	ft_spacesigne(const char *str, int *signe, int *neg)
 {
 	int	i;
 

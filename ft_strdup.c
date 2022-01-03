@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_len(const char *str)
+static int	ft_len(const char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int	ft_len(const char *str)
 	return (i);
 }
 
-char	*ft_cpy(char *dest, char *src)
+static char	*ft_cpy(char *dest, char *src)
 {
 	int	i;
 

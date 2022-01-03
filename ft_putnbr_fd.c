@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_div(int nb)
+static int	ft_div(int nb)
 {
 	int	i;
 

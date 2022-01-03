@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*my_memcpy(void *restrict dst, const void *restrict src, size_t n)
+static void	*my_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*dst_tempo;
 	char	*src_tempo;

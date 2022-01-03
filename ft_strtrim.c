@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_char_is_charset(const char *str, char c)
+static int	ft_char_is_charset(const char *str, char c)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	ft_char_is_charset(const char *str, char c)
 	return (0);
 }
 
-int	ft_start(const char *str, const char *trim)
+static int	ft_start(const char *str, const char *trim)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ int	ft_start(const char *str, const char *trim)
 	return (i);
 }
 
-int	ft_end(const char *str, const char *trim)
+static int	ft_end(const char *str, const char *trim)
 {
 	size_t	i;
 
@@ -46,7 +46,7 @@ int	ft_end(const char *str, const char *trim)
 	return (i);
 }
 
-size_t	ft_white_space(const char *str)
+static size_t	ft_white_space(const char *str)
 {
 	size_t	i;
 

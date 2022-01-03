@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-void	*ft_free(char **split)
+static void	*ft_free(char **split)
 {
 	unsigned int	i;
 
@@ -25,7 +25,7 @@ void	*ft_free(char **split)
 	return (NULL);
 }
 
-char	**ft_count_words(char const *str, char c)
+static char	**ft_count_words(char const *str, char c)
 {
 	int		count;
 	int		i;
@@ -48,7 +48,7 @@ char	**ft_count_words(char const *str, char c)
 	return (split);
 }
 
-int	ft_lenword(const char *str, char c)
+static int	ft_lenword(const char *str, char c)
 {
 	int	i;
 
@@ -58,7 +58,7 @@ int	ft_lenword(const char *str, char c)
 	return (i);
 }
 
-int	ft_copy(char *dest, const char *str, char c, int i)
+static int	ft_copy(char *dest, const char *str, char c, int i)
 {
 	int	j;
 

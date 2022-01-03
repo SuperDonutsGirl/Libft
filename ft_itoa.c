@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_intlen(int nb)
+static int	ft_intlen(int nb)
 {
 	int	i;
 
