@@ -35,8 +35,8 @@ int main(int argc, char **argv)
 {
     argc++;
 
-    printf("my   memset --> %d \n", ft_memset(argv[1], atoi(argv[2]),
+    printf("my   memset --> %s \n", ft_memset(argv[1], atoi(argv[2]),
 		atoi(argv[3])));
-	printf("real memset --> %d \n", memset(argv[1], atoi(argv[2]),
+	printf("real memset --> %s \n", memset(argv[1], atoi(argv[2]),
 		atoi(argv[3])));
 }*/
