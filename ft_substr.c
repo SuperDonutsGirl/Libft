@@ -12,15 +12,37 @@
 
 #include "libft.h"
 
+static size_t	ft_lenstr(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+static size_t	ft_len(size_t size, size_t len, unsigned int start)
+{
+	if (size < start)
+		len = 0;
+	else if (start + len >= size)
+		len = size - start;
+	return (len);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
 	size_t			i;
 	size_t			y;
+	size_t			size;
 
 	if (!s)
 		return (0);
-	str = (char *)malloc(sizeof(*s) * (len + 1));
+	size = ft_lenstr(s);
+	len = ft_len(size, len, start);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
 	i = 0;

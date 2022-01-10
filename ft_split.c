@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static void	*ft_free(char **split)
 {
@@ -22,6 +22,7 @@ static void	*ft_free(char **split)
 		free(split[i]);
 		i++;
 	}
+	free(split);
 	return (NULL);
 }
 
@@ -79,6 +80,8 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	int		i;
 
+	if (!s)
+		return (0);
 	split = ft_count_words(s, c);
 	if (!split)
 		return (0);
@@ -92,16 +95,26 @@ char	**ft_split(char const *s, char c)
 		{
 			split[words] = (char *)malloc(sizeof(char) * ft_lenword(s, c) + 1);
 			if (!split[words])
-				ft_free(split);
-			i = ft_copy(split[words], s, c, i);
-			words++;
+				return (ft_free(split));
+			i = ft_copy(split[words++], s, c, i);
 		}
 	}
 	split[words] = 0;
 	return (split);
 }
+/*
+int main (void)
+{
+	char **c;
 
-/*#include <stdio.h>
+	c = NULL;
+
+	c = malloc(sizeof(char *) * 4);
+	ft_free(c);
+	return (0);
+}*/
+/*
+#include <stdio.h>
 int main(void)
 {
 	int i;
@@ -109,9 +122,11 @@ int main(void)
 	char c;
 	char	*str;
 
-	c = 32;
+
 	str = "1un 2deux 3trois 4quatre 5cinq";
 
+	c = (char)malloc(sizeof(char));
+	c = 0;
 	split = ft_split(str, c);
 	i = 0;
 	while (split[i])

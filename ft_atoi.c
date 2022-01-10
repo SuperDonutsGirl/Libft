@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 static int	ft_spacesigne(const char *str, int *signe, int *neg)
 {
 	int	i;
@@ -38,14 +40,18 @@ int	ft_atoi(const char *str)
 
 	nb = 0;
 	i = ft_spacesigne(str, &signe, &neg);
+	if (signe > 1)
+		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb *= 10;
 		nb += str[i] - 48;
 		i++;
+		if (neg == 1 && nb > 2147483648)
+			return (0);
+		if (neg == 0 && nb > 2147483647)
+			return (-1);
 	}
-	if (signe > 1)
-		return (0);
 	if (neg == 1)
 		nb *= -1;
 	return (nb);

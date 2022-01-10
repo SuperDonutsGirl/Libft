@@ -46,35 +46,23 @@ static int	ft_end(const char *str, const char *trim)
 	return (i);
 }
 
-static size_t	ft_white_space(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
-		|| str[i] == '\r' || str[i] == ' ')
-		i++;
-	return (i);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
 	int		i;
 	char	*trim;
+	int		size;
 
 	if (!s1 || !set)
 		return (0);
 	start = ft_start(s1, set);
 	end = ft_end(s1, set);
-	if (ft_strlen(s1) == ft_white_space(s1)
-		&& ft_strlen(set) == ft_white_space(set))
-	{
-		trim = "\0";
-		return (trim);
-	}
-	trim = (char *)malloc(sizeof(char) * (end - start + 1) + 1);
+	if (end >= start)
+		size = end - start + 2;
+	else
+		size = 1;
+	trim = (char *)malloc(sizeof(char) * size);
 	if (!trim)
 		return (0);
 	i = 0;
