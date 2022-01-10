@@ -33,7 +33,7 @@ static int	ft_spacesigne(const char *str, int *signe, int *neg)
 
 int	ft_atoi(const char *str)
 {
-	long long	nb;
+	long		nb;
 	int			signe;
 	int			neg;
 	int			i;
@@ -56,3 +56,21 @@ int	ft_atoi(const char *str)
 		nb *= -1;
 	return (nb);
 }
+
+/*
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+	argc++;
+
+	int my;
+	int real;
+
+	my = ft_atoi(argv[1]);
+	real = atoi(argv[1]);
+
+	printf ("my atoi   : %d\n", my);
+	printf ("real atoi : %d\n", real);
+}*/

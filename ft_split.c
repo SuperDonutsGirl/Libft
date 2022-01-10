@@ -95,7 +95,11 @@ char	**ft_split(char const *s, char c)
 		{
 			split[words] = (char *)malloc(sizeof(char) * ft_lenword(s, c) + 1);
 			if (!split[words])
+<<<<<<< HEAD
 				return (ft_free(split));
+=======
+				ft_free(split);
+>>>>>>> 2a9f7038fce51fccd96417e46a1ed733d529ebd5
 			i = ft_copy(split[words++], s, c, i);
 		}
 	}
