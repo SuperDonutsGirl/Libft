@@ -26,20 +26,3 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-/*   MAIN NON FONCTIONNEL
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-
-
-int main()
-{
-    void *s = "bonjour";
-	size_t n = 4;
-
-	const char *a = ft_bzero(s, n);
-	const char *c = bzero(s, n);
-
-    printf("my   bzero --> %d \n", a);
-	printf("real bzero --> %d \n", c);
-}*/
