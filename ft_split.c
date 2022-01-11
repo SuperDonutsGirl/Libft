@@ -49,11 +49,8 @@ static char	**ft_count_words(char const *str, char c)
 	return (split);
 }
 
-static int	ft_lenword(const char *str, char c)
+static int	ft_lenword(const char *str, char c, int i)
 {
-	int	i;
-
-	i = 0;
 	while (str[i] && str[i] != c)
 		i++;
 	return (i);
@@ -93,13 +90,9 @@ char	**ft_split(char const *s, char c)
 			i++;
 		else
 		{
-			split[words] = (char *)malloc(sizeof(char) * ft_lenword(s, c) + 1);
+			split[words] = malloc(sizeof(char) * ft_lenword(s, c, i) + 1);
 			if (!split[words])
-<<<<<<< HEAD
 				return (ft_free(split));
-=======
-				ft_free(split);
->>>>>>> 2a9f7038fce51fccd96417e46a1ed733d529ebd5
 			i = ft_copy(split[words++], s, c, i);
 		}
 	}
@@ -117,21 +110,18 @@ int main (void)
 	ft_free(c);
 	return (0);
 }*/
+
 /*
 #include <stdio.h>
 int main(void)
 {
 	int i;
 	char **split;
-	char c;
-	char	*str;
+	char c1, c2, c3, c4, c5;
+	char	*str1, *str2, *str4, *str3, *str5;
 
 
-	str = "1un 2deux 3trois 4quatre 5cinq";
-
-	c = (char)malloc(sizeof(char));
-	c = 0;
-	split = ft_split(str, c);
+	split = ft_split(str4, c4);
 	i = 0;
 	while (split[i])
 	{

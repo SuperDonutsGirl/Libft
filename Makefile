@@ -49,16 +49,18 @@ ${NAME}:	${OBJ}
 
 all:		${NAME}
 
-clean:
-		rm  ${OBJ}
-		
-fclean: 	clean
-		rm  ${NAME}
-
-re:		fclean all
-
 bonus: ${OBJ} ${BONUSOBJ}
 	ar -rc ${NAME} ${OBJ} ${BONUSOBJ}
+
+clean:
+		rm  -f ${OBJ} ${BONUSOBJ}
+		
+fclean: 	clean
+		rm  -f ${NAME} 
+
+re:		fclean all 
+
+
 
 
 .PHONY:	all clean fclean re bonus
