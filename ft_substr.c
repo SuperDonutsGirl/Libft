@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-static size_t	ft_lenstr(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 static size_t	ft_len(size_t size, size_t len, unsigned int start)
 {
 	if (size < start)
@@ -40,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (0);
-	size = ft_lenstr(s);
+	size = ft_strlen(s);
 	len = ft_len(size, len, start);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
