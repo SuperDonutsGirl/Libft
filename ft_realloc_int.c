@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-int *ft_realloc_int(int *tab, int len_tab, int add_len)
+int	*ft_realloc_int(int *tab, int len_tab, int add_len)
 {
-    int *new_tab;
-    int i;
+	int	*new_tab;
+	int	i;
 
-    new_tab = malloc(sizeof(int) * (len_tab + add_len));
-    if (!new_tab)
-        return (NULL);
-    i = 0;
-    while (i < len_tab)
-    {
-        new_tab[i] = tab[i];
-        i++;
-    }
-    return(new_tab);
+	new_tab = malloc(sizeof(int) * (len_tab + add_len));
+	if (!new_tab)
+		return (NULL);
+	i = 0;
+	while (i < len_tab)
+	{
+		new_tab[i] = tab[i];
+		i++;
+	}
+	return (new_tab);
 }
