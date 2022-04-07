@@ -26,5 +26,6 @@ int	*ft_realloc_int(int *tab, int len_tab, int add_len)
 		new_tab[i] = tab[i];
 		i++;
 	}
+	free(tab);
 	return (new_tab);
 }
