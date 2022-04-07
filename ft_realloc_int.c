@@ -17,6 +17,8 @@ int	*ft_realloc_int(int *tab, int len_tab, int add_len)
 	int	*new_tab;
 	int	i;
 
+	if (len_tab == 0)
+		len_tab++;
 	new_tab = malloc(sizeof(int) * (len_tab + add_len));
 	if (!new_tab)
 		return (NULL);
