@@ -22,6 +22,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int		ft_abs(int x);
+
 int		ft_isprint(int c);
 
 int		ft_isalpha(int c);
@@ -42,7 +44,7 @@ size_t	ft_strlen(const char *s);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(char *s, int c);
 
 char	*ft_strrchr(const char *s, int c);
 
