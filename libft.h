@@ -24,6 +24,10 @@ typedef struct s_list
 
 int		ft_abs(int x);
 
+int		*ft_realloc_int(int *tab, int len_tab, int add_len);
+
+void	*ft_free_split(char **split);
+
 int		ft_isprint(int c);
 
 int		ft_isalpha(int c);
