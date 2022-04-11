@@ -19,9 +19,9 @@ static int	ft_spacesigne(const char *str, int *signe, int *neg)
 	i = 0;
 	*neg = 0;
 	*signe = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	while (str[i] && ((str[i] >= 9 && str[i] <= 13) || str[i] == 32))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] && (str[i] == '-' || str[i] == '+'))
 	{
 		if (str[i] == '-')
 			*neg = 1;
@@ -38,6 +38,8 @@ int	ft_atoi(const char *str)
 	int			neg;
 	int			i;
 
+	if (!str)
+		return (0);
 	nb = 0;
 	i = ft_spacesigne(str, &signe, &neg);
 	if (signe > 1)

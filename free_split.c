@@ -10,11 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_free_split(char **split)
 {
 	unsigned int	i;
 
 	i = 0;
+	if (!split)
+		return (0);
 	while (split[i])
 	{
 		free(split[i]);
