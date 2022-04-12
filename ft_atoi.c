@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 	i = ft_spacesigne(str, &signe, &neg);
 	if (signe > 1)
 		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		nb *= 10;
 		nb += str[i] - 48;
