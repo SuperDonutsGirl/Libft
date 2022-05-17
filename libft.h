@@ -26,6 +26,10 @@ int		ft_abs(int x);
 
 int		*ft_realloc_int(int *tab, int len_tab, int add_len);
 
+char	*ft_strcpy(char *dest, char *src);
+
+int		ft_strfchr(char *str, char c);
+
 void	*ft_free_split(char **split);
 
 int		ft_isprint(int c);
